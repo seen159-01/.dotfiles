@@ -1,1 +1,1 @@
-hello world
+Shawn's basic omarchy config
