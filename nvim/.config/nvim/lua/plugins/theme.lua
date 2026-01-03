@@ -1,0 +1,1 @@
+/home/schen/.config/omarchy/current/theme/neovim.lua
