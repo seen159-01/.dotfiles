@@ -8,58 +8,69 @@ return
         local dap, dapui = require("dap"), require("dapui")
         dapui.setup()
 
-        dap.adapters.gdb = {
+        dap.adapters.cppdbg = {
+            id = "cppdbg",
             type = "executable",
-            command = "gdb",
-            args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+            command = vim.fn.stdpath("data") .. "/mason/bin/OpenDebugAD7",
         }
-        dap.configurations.c = {
+        -- dap.adapters.gdb = {
+        --     type = "executable",
+        --     command = "gdb",
+        --     args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+        -- }
+        dap.configurations.cpp = {
             {
-                name = "Launch",
-                type = "gdb",
+                name = "Launch Active file",
+                type = "cppdbg",
+                request = "launch",
+                program = "${fileBasenameNoExtension}",
+                cwd = '${workspaceFolder}',
+                stopAtEntry = true,
+            },
+            {
+                name = "Launch psi",
+                type = "cppdbg",
+                request = "launch",
+                program = "build/psi",
+                cwd = '${workspaceFolder}',
+                stopAtEntry = true,
+            },
+            {
+                name = "Launch file",
+                type = "cppdbg",
                 request = "launch",
                 program = function()
                     return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
                 end,
-                args = {}, -- provide arguments if needed
-                cwd = "${workspaceFolder}",
-                stopAtBeginningOfMainSubprogram = false,
-            },
-            {
-                name = "Select and attach to process",
-                type = "gdb",
-                request = "attach",
-                program = function()
-                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                end,
-                pid = function()
-                    local name = vim.fn.input('Executable name (filter): ')
-                    return require("dap.utils").pick_process({ filter = name })
-                end,
-                cwd = '${workspaceFolder}'
+                cwd = '${workspaceFolder}',
+                stopAtEntry = true,
             },
             {
                 name = 'Attach to gdbserver :1234',
-                type = 'gdb',
-                request = 'attach',
-                target = 'localhost:1234',
+                type = 'cppdbg',
+                request = 'launch',
+                MIMode = 'gdb',
+                miDebuggerServerAddress = 'localhost:1234',
+                miDebuggerPath = '/usr/bin/gdb',
+                cwd = '${workspaceFolder}',
                 program = function()
                     return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
                 end,
-                cwd = '${workspaceFolder}'
-            }
+            },
         }
+        dap.configurations.c = dap.configurations.cpp
+        dap.configurations.rust = dap.configurations.cpp
         dap.listeners.before.attach.dapui_config = function()
             dapui.open()
         end
         dap.listeners.before.launch.dapui_config = function()
             dapui.open()
         end
-        dap.listeners.before.event_terminated.dapui_config = function()
-            dapui.close()
-        end
-        dap.listeners.before.event_exited.dapui_config = function()
-            dapui.close()
-        end
+        -- dap.listeners.before.event_terminated.dapui_config = function()
+        --     dapui.close()
+        -- end
+        -- dap.listeners.before.event_exited.dapui_config = function()
+        --     dapui.close()
+        -- end
     end
 }
