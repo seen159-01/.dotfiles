@@ -11,3 +11,4 @@ source ~/.local/share/omarchy/default/bash/rc
 # alias p='python'
 alias vim='nvim'
 alias ll='ls -a'
+alias hw='cd ~/dev/omscs/'
