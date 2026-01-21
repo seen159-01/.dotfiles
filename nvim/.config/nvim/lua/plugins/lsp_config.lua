@@ -2,7 +2,7 @@ return
 {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-        ensure_installed = { "lua_ls", "rust_analyzer", "basedpyright", "clangd" },
+        ensure_installed = { "lua_ls", "rust_analyzer", "basedpyright", "clangd", },
     },
     dependencies = {
         { "mason-org/mason.nvim", opts = {} },
@@ -15,4 +15,10 @@ return
             client.server_capabilities.documentRangeFormattingProvider = false
         end,
     }),
+    vim.diagnostic.config({
+        virtual_text = true,
+        underline = true,
+        wrap = true,
+    })
+
 }
