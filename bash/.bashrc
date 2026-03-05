@@ -1,4 +1,4 @@
-# If not running interactively, don't do anything (leave this at the top of this file)
+#If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
 # All the default Omarchy aliases and functions

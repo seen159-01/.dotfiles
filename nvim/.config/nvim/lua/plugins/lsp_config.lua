@@ -20,5 +20,4 @@ return
         underline = true,
         wrap = true,
     })
-
 }

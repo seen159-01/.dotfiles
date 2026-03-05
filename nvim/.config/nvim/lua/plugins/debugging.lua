@@ -28,6 +28,22 @@ return
                 stopAtEntry = true,
             },
             {
+                name = "Launch fucking bullshit ass fucking client",
+                type = "cppdbg",
+                request = "launch",
+                program = "${workspaceFolder}/gfclient_download_noasan",
+                cwd = '${workspaceFolder}',
+                stopAtEntry = false,
+            },
+            {
+                name = "asan",
+                type = "cppdbg",
+                request = "launch",
+                program = "${workspaceFolder}/gfclient_download_noasan",
+                cwd = '${workspaceFolder}',
+                stopAtEntry = false,
+            },
+            {
                 name = "Launch psi",
                 type = "cppdbg",
                 request = "launch",
