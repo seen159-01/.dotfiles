@@ -94,5 +94,6 @@
       "after": ["<Esc>"]
     }
   ],
-  "workbench.colorTheme": "One Dark Pro Night Flat"
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "redhat.telemetry.enabled": false
 }
