@@ -18,4 +18,7 @@ alias hw='cd ~/dev/omscs/'
 alias pr1='docker run -it -v "/home/schen/dev/omscs/CS6200/pr1:/pr1" -w "/pr1" gtomscs6200/spr26-environment:latest'
 
 export SDKMAN_DIR="$HOME/.sdkman"
+export PATH="$PATH:$HOME/.local/grpc/bin"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"   
+
+. "$HOME/.local/share/../bin/env"
