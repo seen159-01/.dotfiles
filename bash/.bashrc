@@ -1,24 +1,18 @@
-#If not running interactively, don't do anything (leave this at the top of this file)
+# If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
-set -o vi
+# Auto-launch fish shell if in interactive bash
+if command -v fish &> /dev/null; then
+	if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+	then
+		shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+		exec fish $LOGIN_OPTION
+	fi
+fi
+
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
 
-# Add your own exports, aliases, and functions here.
-#
-export MANPAGER='nvim +Man!'
-# export MANPAGER='nvim'
-# Make an alias for invoking commands you use constantly
-# alias p='python'
-alias vim='nvim'
-alias ll='ls -a'
-alias hw='cd ~/dev/omscs/'
-alias pr1='docker run -it -v "/home/schen/dev/omscs/CS6200/pr1:/pr1" -w "/pr1" gtomscs6200/spr26-environment:latest'
-
-export SDKMAN_DIR="$HOME/.sdkman"
-export PATH="$PATH:$HOME/.local/grpc/bin"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"   
-
-. "$HOME/.local/share/../bin/env"
+# Add your own exports, aliases, and functions below.
+alias ll='ls -la'

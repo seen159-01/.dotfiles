@@ -46,6 +46,8 @@ HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space a
 # fzf setup
 source <(fzf --zsh) # allow for fzf history widget
 
+# zoxide setup
+eval "$(zoxide init zsh)"
 
 # binds
 # bindkey "^a" beginning-of-line
