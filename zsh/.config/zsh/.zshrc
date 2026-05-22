@@ -1,6 +1,9 @@
 # main zsh settings. env in ~/.zprofile
 # read second
 
+#vim bindings 
+bindkey -v
+bindkey -M viins 'jj' vi-cmd-mode
 
 # source global shell alias & variables files
 [ -f "$XDG_CONFIG_HOME/shell/alias" ] && source "$XDG_CONFIG_HOME/shell/alias"
@@ -79,7 +82,7 @@ echo -e "${NEWLINE}\x1b[38;5;137m\x1b[48;5;0m hey sexy, it's$(print -P '%D{%_I:%
 
 # autosuggestions
 # requires zsh-autosuggestions
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # syntax highlighting
 # requires zsh-syntax-highlighting package
