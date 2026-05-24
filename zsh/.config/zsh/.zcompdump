@@ -1,4 +1,4 @@
-#files: 871	version: 5.9
+#files: 851	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -84,14 +84,12 @@ _comps=(
 'bat' '_bat'
 'batch' '_at'
 'baz' '_baz'
-'bazel' '_bazel'
 'bear' '_bear'
 'beep' '_beep'
 'bg' '_jobs_bg'
 'bibtex' '_bibtex'
 'bindkey' '_bindkey'
 'bison' '_bison'
-'bluetoothctl' '_bluetoothctl'
 'bmake' '_make'
 'bogofilter' '_bogofilter'
 'bogotune' '_bogofilter'
@@ -156,7 +154,6 @@ _comps=(
 'chattr' '_chattr'
 'chcon' '_chcon'
 'chdir' '_cd'
-'checkupdates' '_checkupdates'
 'chfn' '_users'
 'chgrp' '_chown'
 'chimera' '_webbrowser'
@@ -183,7 +180,6 @@ _comps=(
 'cmp' '_cmp'
 'co' '_rcs'
 'code' '_code'
-'code-oss' '_code-oss'
 'column' '_column'
 'comb' '_sccs'
 'combine' '_imagemagick'
@@ -360,7 +356,6 @@ _comps=(
 'fixwpps' '_psutils'
 'fixwwps' '_psutils'
 'flac' '_flac'
-'flatpak' '_flatpak'
 'flex' '_flex'
 'flex++' '_flex'
 'flipdiff' '_patchutils'
@@ -439,7 +434,6 @@ _comps=(
 'gh' '_gh'
 'ghead' '_head'
 'ghostscript' '_ghostscript'
-'ghostty' '_ghostty'
 'ghostview' '_pspdf'
 'gid' '_id'
 'ginstall' '_install'
@@ -664,7 +658,6 @@ _comps=(
 'killall' '_killall'
 'killall5' '_killall'
 'kioclient' '_kfmclient'
-'kitty' '_kitty'
 'knock' '_knock'
 'konqueror' '_webbrowser'
 'kpartx' '_kpartx'
@@ -862,7 +855,6 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
-'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -889,7 +881,6 @@ _comps=(
 'oksh' '_sh'
 'okular' '_okular'
 'oomctl' '_oomctl'
-'opencode' '_opencode'
 'openstack' '_openstack'
 'opera' '_webbrowser'
 'opera-next' '_webbrowser'
@@ -901,22 +892,14 @@ _comps=(
 'p4' '_perforce'
 'p4d' '_perforce'
 'pacat' '_pulseaudio'
-'paccache' '_paccache'
-'pacdiff' '_pacdiff'
 'pack' '_pack'
 'packf' '_mh'
-'paclist' '_paclist'
-'paclog-pkglist' '_paclog-pkglist'
 'pacman' '_pacman'
 'pacman-conf' '_pacman'
 'pacman-key' '_pacman'
 'pacman.static' '_pacman'
 'pacmd' '_pulseaudio'
-'pacscripts' '_pacscripts'
-'pacsearch' '_pacsearch'
-'pacsort' '_pacsort'
 'pactl' '_pulseaudio'
-'pactree' '_pactree'
 'padsp' '_pulseaudio'
 'pandoc' '_pandoc'
 'paplay' '_pulseaudio'
@@ -1051,7 +1034,6 @@ _comps=(
 'quilt' '_quilt'
 'r' '_fc'
 'rake' '_rake'
-'rankmirrors' '_rankmirrors'
 'ranlib' '_ranlib'
 'rar' '_rar'
 'rc' '_sh'
@@ -1172,6 +1154,7 @@ _comps=(
 'showchar' '_psutils'
 'showmount' '_showmount'
 'shred' '_shred'
+'shtab' '_shtab'
 'shuf' '_shuf'
 'shutdown' '_shutdown'
 'sisu' '_sisu'
@@ -1367,7 +1350,6 @@ _comps=(
 'unwrapdiff' '_patchutils'
 'unxz' '_xz'
 'unzip' '_zip'
-'updpkgsums' '_updpkgsums'
 'upower' '_upower'
 'uptime' '_uptime'
 'urxvt' '_urxvt'
@@ -1715,26 +1697,22 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _bat _bazel _bear _bluetoothctl \
-            _bootctl _busctl _bwrap _cargo _checkupdates \
-            _code _code-oss _coredumpctl _ctr _curl \
+autoload -Uz _alacritty _bat _bear _bootctl _busctl \
+            _bwrap _cargo _coredumpctl _ctr _curl \
             _deno _dkms _docker _dotnet _dust \
-            _eza _fastfetch _fd _flatpak _gh \
-            _ghostty _gum _hostnamectl _hyprctl _hyprpm \
-            _img2sixel _insmod _journalctl _kernel-install _kitty \
-            _localectl _loginctl _lsmod _luarocks _luarocks-admin \
-            _machinectl _mako _makoctl _mise _mkinitcpio \
-            _mpv _networkctl _ninja _oomctl _opencode \
-            _p11-kit _paccache _pacdiff _paclist _paclog-pkglist \
-            _pacman _pacscripts _pacsearch _pacsort _pactree \
-            _pip _playerctl _powerprofilesctl _pulseaudio _qpdf \
-            _rankmirrors _resolvectl _rg _rmmod _run0 \
+            _eza _fastfetch _fd _gh _gum \
+            _hostnamectl _hyprctl _hyprpm _img2sixel _insmod \
+            _journalctl _kernel-install _localectl _loginctl _lsmod \
+            _luarocks _luarocks-admin _machinectl _mako _makoctl \
+            _mise _mkinitcpio _mpv _networkctl _oomctl \
+            _p11-kit _pacman _playerctl _powerprofilesctl _pulseaudio \
+            _qpdf _resolvectl _rg _rmmod _run0 \
             _satty _sd_bus_address _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes \
-            _sd_unit_files _sensors _sensors-detect _snapper _starship \
-            _systemctl _systemd _systemd-analyze _systemd-delta _systemd-hwdb \
-            _systemd-id128 _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run \
-            _systemd-tmpfiles _timedatectl _tldr _tree-sitter _trust \
-            _udevadm _udisks2 _updpkgsums _upower _userdbctl \
+            _sd_unit_files _sensors _sensors-detect _shtab _snapper \
+            _starship _systemctl _systemd _systemd-analyze _systemd-delta \
+            _systemd-hwdb _systemd-id128 _systemd-inhibit _systemd-nspawn _systemd-path \
+            _systemd-run _systemd-tmpfiles _timedatectl _tldr _tree-sitter \
+            _trust _udevadm _udisks2 _upower _userdbctl \
             _varlinkctl _wl-copy _wl-paste _wpctl _yay \
             _yt-dlp _zoxide _cdr _all_labels _all_matches \
             _alternative _approximate _arg_compile _arguments _bash_completions \
